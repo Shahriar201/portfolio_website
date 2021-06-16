@@ -364,7 +364,7 @@
     </script>
     
     {{-- Product approaved by ajax --}}
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $(document).ready(function() {
             $(document).on('click', '#approaved', function() {
                 var actionTo = $(this).attr('href');
@@ -409,7 +409,7 @@
             })
         })
 
-    </script>
+    </script> --}}
 
     {{-- Realtime image using Javascript --}}
     <script type="text/javascript">

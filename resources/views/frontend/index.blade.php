@@ -172,7 +172,7 @@
   <!-- Portfolio Filters -->
   <div class="portfolio"> 
     
-    <div id="filters" class="sixteen columns">
+    {{-- <div id="filters" class="sixteen columns">
       <ul class="clearfix">
         <li><a id="all" href="#" data-filter="*" class="active">
           <h5>All</h5>
@@ -194,7 +194,7 @@
           </a></li>
       </ul>
     </div>
-    <!--/Portfolio Filters --> 
+    <!--/Portfolio Filters -->  --}}
     
     <!-- Portfolio Wrapper -->
     <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper"> 

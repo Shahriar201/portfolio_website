@@ -100,6 +100,28 @@ Route::group(['middleware'=>['auth', 'admin']], function(){
         Route::post('/update/{id}', 'Backend\AboutController@update')->name('abouts.update');
         Route::post('/delete', 'Backend\AboutController@delete')->name('abouts.delete');        
     });
+
+    Route::prefix('services')->group(function(){
+    
+        Route::get('/view', 'Backend\ServiceController@view')->name('services.view');
+        Route::get('/add', 'Backend\ServiceController@add')->name('services.add');
+        Route::post('/store', 'Backend\ServiceController@store')->name('services.store'); 
+        Route::get('/edit/{id}', 'Backend\ServiceController@edit')->name('services.edit');
+        Route::post('/update/{id}', 'Backend\ServiceController@update')->name('services.update');
+        Route::post('/delete', 'Backend\ServiceController@delete')->name('services.delete');
+        
+    });
+    
+    Route::prefix('portfolios')->group(function(){
+    
+        Route::get('/view', 'Backend\PortfolioController@view')->name('portfolios.view');
+        Route::get('/add', 'Backend\PortfolioController@add')->name('portfolios.add');
+        Route::post('/store', 'Backend\PortfolioController@store')->name('portfolios.store'); 
+        Route::get('/edit/{id}', 'Backend\PortfolioController@edit')->name('portfolios.edit');
+        Route::post('/update/{id}', 'Backend\PortfolioController@update')->name('portfolios.update');
+        Route::post('/delete', 'Backend\PortfolioController@delete')->name('portfolios.delete');
+        
+    });
     
 });
 

@@ -94,6 +94,63 @@
             </ul>
         </li>
 
+        <li class="nav-item has-treeview {{ ($prefix=='/abouts')?'menu-open':'' }}">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Manage About
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('abouts.view') }}" class="nav-link {{ ($route=='abouts.view')?'active':'' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View About</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+
+        <li class="nav-item has-treeview {{ ($prefix=='/services')?'menu-open':'' }}">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Manage Service
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('services.view') }}" class="nav-link {{ ($route=='services.view')?'active':'' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View Service</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="nav-item has-treeview {{ ($prefix=='/portfolios')?'menu-open':'' }}">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Manage Portfolio
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('portfolios.view') }}" class="nav-link {{ ($route=='portfolios.view')?'active':'' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View Portfolio</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+
         <li class="nav-item has-treeview {{ ($prefix=='/contacts')?'menu-open':'' }}">
             <a href="" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
@@ -117,27 +174,7 @@
                     </a>
                 </li>     
             </ul>
-        </li>
-
-        <li class="nav-item has-treeview {{ ($prefix=='/abouts')?'menu-open':'' }}">
-            <a href="" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    Manage About
-                    <i class="fas fa-angle-left right"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{ route('abouts.view') }}" class="nav-link {{ ($route=='abouts.view')?'active':'' }}">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>View About</p>
-                    </a>
-                </li>
-                
-            </ul>
-        </li>
-        
+        </li>             
 
     </ul>
 </nav>

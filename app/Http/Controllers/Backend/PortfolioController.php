@@ -59,8 +59,11 @@ class PortfolioController extends Controller
     }
 
     public function delete(Request $request){
-        $about = Portfolio::find($request->id);
-        $about->delete();
+        $portfolio = Portfolio::find($request->id);
+        if(file_exists('public/upload/portfolio_images/' . $portfolio->image) AND ! empty($portfolio->image)){
+            unlink('public/upload/portfolio_images/' . $portfolio->image);
+        }
+        $portfolio->delete();
 
         return redirect()->route('portfolios.view')->with('success', 'Data deleted successfully');
     }

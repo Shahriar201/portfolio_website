@@ -123,5 +123,16 @@ Route::group(['middleware'=>['auth', 'admin']], function(){
         
     });
     
+    Route::prefix('clients')->group(function(){
+    
+        Route::get('/view', 'Backend\ClientController@view')->name('clients.view');
+        Route::get('/add', 'Backend\ClientController@add')->name('clients.add');
+        Route::post('/store', 'Backend\ClientController@store')->name('clients.store'); 
+        Route::get('/edit/{id}', 'Backend\ClientController@edit')->name('clients.edit');
+        Route::post('/update/{id}', 'Backend\ClientController@update')->name('clients.update');
+        Route::post('/delete', 'Backend\ClientController@delete')->name('clients.delete');
+        
+    });
+    
 });
 

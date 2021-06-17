@@ -333,8 +333,8 @@
           <ul>
             <li><a href="javascript:void(0)" class="fa fa-twitter"></a></li>
             <li><a href="javascript:void(0)" class="fa fa-facebook"></a></li>
-            <li><a href="javascript:void(0)" class="fa fa-pinterest"></a></li>
-            <li><a href="javascript:void(0)" class="fa fa-google-plus"></a></li>
+            <li><a href="javascript:void(0)" class="fa fa-linkedin"></a></li>
+            <li><a href="javascript:void(0)" class="fa fa-github"></a></li>
           </ul>
         </div>
         <h3 class="wow fadeInDown delay-03s">Tom Rensed</h3>

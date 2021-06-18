@@ -134,5 +134,16 @@ Route::group(['middleware'=>['auth', 'admin']], function(){
         
     });
     
+    Route::prefix('teams')->group(function(){
+    
+        Route::get('/view', 'Backend\TeamController@view')->name('teams.view');
+        Route::get('/add', 'Backend\TeamController@add')->name('teams.add');
+        Route::post('/store', 'Backend\TeamController@store')->name('teams.store'); 
+        Route::get('/edit/{id}', 'Backend\TeamController@edit')->name('teams.edit');
+        Route::post('/update/{id}', 'Backend\TeamController@update')->name('teams.update');
+        Route::post('/delete', 'Backend\TeamController@delete')->name('teams.delete');
+        
+    });
+    
 });
 

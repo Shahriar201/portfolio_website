@@ -25,6 +25,7 @@ class ServiceController extends Controller
 
         $data->short_title = $request->short_title;
         $data->long_title = $request->long_title;
+        $data->icon = $request->icon;
         $data->created_by = Auth::user()->id;
         $data->save();
 
@@ -42,6 +43,7 @@ class ServiceController extends Controller
 
         $data->short_title = $request->short_title;
         $data->long_title = $request->long_title;
+        $data->icon = $request->icon;
         $data->updated_by = Auth::user()->id;
         $data->save();
 

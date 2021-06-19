@@ -59,7 +59,7 @@
 
                                 <div class="form-group col-md-6">
                                     <label for="long_title">Long Title</label>
-                                    <input type="text" name="long_title" value="{{ $editData->long_title }}" class="form-control">
+                                    <textarea type="text" name="long_title"class="form-control">{{ $editData->long_title }}</textarea>
                                 </div>
 
                                <div class="form-group col-md-4">

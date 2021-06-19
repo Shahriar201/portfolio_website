@@ -25,8 +25,8 @@
     <header id="header_wrapper">
         <div class="container">
             <div class="header_box">
-                <div class="logo"><a href=""><img src="{{ asset('public/upload/logo_images/' . $logo->image) }}"
-                            alt="logo"></a></div>
+                {{-- <div class="logo"><a href=""><img src="{{ asset('public/upload/logo_images/' . $logo->image) }}" --}}
+                            {{-- alt="logo"></a></div> --}}
                 <nav class="navbar navbar-inverse" role="navigation">
                     <div class="navbar-header">
                         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse"
@@ -38,9 +38,9 @@
                         <ul class="nav navbar-nav" id="mainNav">
                             <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
                             <li><a href="#aboutUs" class="scroll-link">About Us</a></li>
-                            <li><a href="#service" class="scroll-link">Services</a></li>
+                            <li><a href="#service" class="scroll-link">Experience</a></li>
                             <li><a href="#Portfolio" class="scroll-link">Portfolio</a></li>
-                            <li><a href="#clients" class="scroll-link">Clients</a></li>
+                            {{-- <li><a href="#clients" class="scroll-link">Clients</a></li> --}}
                             <li><a href="#team" class="scroll-link">Team</a></li>
                             <li><a href="#contact" class="scroll-link">Contact</a></li>
                         </ul>
@@ -57,16 +57,16 @@
             <div class="container">
                 <div class="hero_section">
                     <div class="row">
-                        <div class="col-lg-5 col-sm-7">
+                        <div class="col-lg-7 col-sm-10">
                             <div class="top_left_cont zoomIn wow animated">
                                 <h2><strong>{{ $slider->short_title }}</strong></h2>
                                 <p>{{ $slider->long_title }}</p>
                                 <a href="#service" class="read_more2">Read more</a>
                             </div>
                         </div>
-                        <div class="col-lg-7 col-sm-5">
+                        <div style="padding:30px 5px 5px 50px" class="col-lg-5 col-sm-8">
                             <img src="{{ asset('public/upload/slider_images/' . $slider->image) }}"
-                                class="zoomIn wow animated" alt="" />
+                                class="zoomIn wow animated" alt="" style="width: 250px; height:280px; border-radius:20px"/>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                 <h2>About</h2>
                 <div class="inner_section">
                     <div class="row">
-                        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img
+                        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right img-circle"><img
                                 src="{{ asset('public/upload/about_images/' . $about->image) }}"
                                 class="img-circle delay-03s animated wow zoomIn" alt=""></div>
                         <div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
@@ -107,15 +107,15 @@
     <!--Service-->
     <section id="service">
         <div class="container">
-            <h2>Services</h2>
+            <h2>Experience</h2>
             <div class="service_wrapper">
                 <div class="row">
-
+                    
                     @foreach ($services as $service)
                         <div class="col-lg-4">
                             <div class="service_block">
                                 <div class="service_icon delay-03s animated wow  zoomIn"> <span><i
-                                            class="fa fa-android"></i></span> </div>
+                                            class="{{ $service->icon }}"></i></span> </div>
                                 <h3 class="animated fadeInUp wow">{{ $service->short_title }}</h3>
                                 <p class="animated fadeInDown wow">{{ $service->long_title }}</p>
                             </div>
@@ -125,9 +125,6 @@
             </div>
     </section>
     <!--Service-->
-
-
-
 
     <!-- Portfolio -->
     <section id="Portfolio" class="content">
@@ -149,7 +146,7 @@
         <!-- Portfolio Filters -->
         <div class="portfolio">
 
-            {{-- <div id="filters" class="sixteen columns">
+     {{-- <div id="filters" class="sixteen columns">
       <ul class="clearfix">
         <li><a id="all" href="#" data-filter="*" class="active">
           <h5>All</h5>
@@ -181,9 +178,11 @@
                 @foreach ($portfolios as $portfolio)
                     <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;"
                         class="portfolio-item one-four   appleIOS isotope-item">
-                        <div class="portfolio_img"> <img
-                                src="{{ asset('public/upload/portfolio_images/' . $portfolio->image) }}"
-                                alt="Portfolio 1"> </div>
+                        <div class="portfolio_img"> 
+                            <a href="https://www.qries.com/">
+                                <img src="{{ asset('public/upload/portfolio_images/' . $portfolio->image) }}" alt="Portfolio 1">
+                            </a> 
+                        </div>
                         <div class="item_overlay">
                             <div class="item_info">
                                 <h4 class="project_name">{{ $portfolio->title }}</h4>
@@ -212,7 +211,7 @@
     </section>
     <!--/Portfolio -->
 
-    <section class="page_section" id="clients">
+    {{-- <section class="page_section" id="clients">
         <!--page_section-->
         <h2>Clients</h2>
         <!--page_section-->
@@ -227,7 +226,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--client_logos-->
 
     <section class="page_section team" id="team">
@@ -238,6 +237,9 @@
             <div class="team_section clearfix">
 
                 @foreach ($teams as $team)
+                <div class="team_area col-md-4">
+                    
+                </div>
                     <div class="team_area">
                         <div class="team_box wow fadeInDown delay-03s">
                             <div class="team_box_shadow"><a href=""></a></div>
@@ -289,7 +291,7 @@
                                 <p>{{ $contact->mobile_no }}</p>
                             </div>
                             <div class="detail">
-                                <h4>Email us</h4>
+                                <h4>Email</h4>
                                 <p>{{ $contact->email }}</p>
                             </div>
                         </div>

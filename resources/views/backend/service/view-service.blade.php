@@ -9,13 +9,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Manage Service</h1>
+                    <h1 class="m-0">Manage Experience</h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Service</li>
+                        <li class="breadcrumb-item active">Experience</li>
                     </ol>
                 </div>
                 <!-- /.col -->
@@ -39,7 +39,7 @@
                         <div class="card-header">
                             <h3>Service List
                                 <a class="btn btn-success float-right btn-sm" href="{{ route('services.add') }}">
-                                    <i class="fa fa-plus-circle"></i>Add Service</a>
+                                    <i class="fa fa-plus-circle"></i>Add Experience</a>
                                 
                             </h3>
                         </div>
@@ -52,6 +52,7 @@
                                         <th>SL.</th>
                                         <th>Short Title</th>
                                         <th>Long Title</th>
+                                        <th>Icon</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -63,6 +64,7 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $service->short_title }}</td>
                                         <td>{{ $service->long_title }}</td>
+                                        <td>{{ $service->icon }}</td>
 
                                         <td>
                                             <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('services.edit', $service->id)}}">

@@ -25,7 +25,10 @@ class FrontendController extends Controller
         $data['about'] = About::first();
         $data['services'] = Service::all();
         $data['portfolios'] = Portfolio::all();
-        // $data['contact'] = Contact::first();
+        $data['clients'] = Client::all();
+        $data['team_title'] = TeamTitle::first();
+        $data['teams'] = Team::all();
+        $data['contact'] = Contact::first();
 
         // $data['categories'] = Product::select('category_id')->groupBy('category_id')->get();
         // $data['brands'] = Product::select('brand_id')->groupBy('brand_id')->get();

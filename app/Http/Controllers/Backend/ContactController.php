@@ -25,14 +25,13 @@ class ContactController extends Controller
 
     public function store(Request $request){
         $data = new Contact();
-
         $data->address = $request->address;
         $data->mobile_no = $request->mobile_no;
         $data->email = $request->email;
         $data->facebook = $request->facebook;
         $data->twitter = $request->twitter;
-        $data->youtube = $request->youtube;
-        $data->google_plus = $request->google_plus;
+        $data->linkedin = $request->linkedin;
+        $data->instagram = $request->instagram;
         $data->created_by = Auth::user()->id;
         $data->save();
 
@@ -47,14 +46,13 @@ class ContactController extends Controller
 
     public function update(Request $request, $id){
         $data = Contact::find($id);
-
         $data->address = $request->address;
         $data->mobile_no = $request->mobile_no;
         $data->email = $request->email;
         $data->facebook = $request->facebook;
         $data->twitter = $request->twitter;
-        $data->youtube = $request->youtube;
-        $data->google_plus = $request->google_plus;
+        $data->linkedin = $request->linkedin;
+        $data->instagram = $request->instagram;
         $data->updated_by = Auth::user()->id;
         $data->save();
 

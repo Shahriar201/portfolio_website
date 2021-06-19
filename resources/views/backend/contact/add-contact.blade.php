@@ -78,13 +78,13 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <label for="youtube">Youtube</label>
-                                    <input type="text" name="youtube" class="form-control">
+                                    <label for="linkedin">Linkedin</label>
+                                    <input type="text" name="linkedin" class="form-control">
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <label for="google_plus">Google Plus</label>
-                                    <input type="text" name="google_plus" class="form-control">
+                                    <label for="instagram">Instagram</label>
+                                    <input type="text" name="instagram" class="form-control">
                                 </div>
 
                                 <div class="form-group col-md-6" style="padding-top:30px">

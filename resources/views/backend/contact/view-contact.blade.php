@@ -58,8 +58,8 @@
                                         <th>Email</th>
                                         <th>Facebook</th>
                                         <th>Twitter</th>
-                                        <th>Youtube</th>
-                                        <th>Google Plus</th>
+                                        <th>Linkedin</th>
+                                        <th>Instagram</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -74,8 +74,8 @@
                                             <td>{{ $contact->email }}</td>
                                             <td>{{ $contact->facebook }}</td>
                                             <td>{{ $contact->twitter }}</td>
-                                            <td>{{ $contact->youtube }}</td>
-                                            <td>{{ $contact->google_plus }}</td>
+                                            <td>{{ $contact->linkedin }}</td>
+                                            <td>{{ $contact->instagram }}</td>
 
                                             <td>
                                                 <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('contacts.edit', $contact->id)}}">

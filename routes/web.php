@@ -76,21 +76,7 @@ Route::group(['middleware'=>['auth', 'admin']], function(){
         Route::post('/delete', 'Backend\SliderController@delete')->name('sliders.delete');
         
     });
-    
-    Route::prefix('contacts')->group(function(){
-    
-        Route::get('/view', 'Backend\ContactController@view')->name('contacts.view');
-        Route::get('/add', 'Backend\ContactController@add')->name('contacts.add');
-        Route::post('/store', 'Backend\ContactController@store')->name('contacts.store'); 
-        Route::get('/edit/{id}', 'Backend\ContactController@edit')->name('contacts.edit');
-        Route::post('/update/{id}', 'Backend\ContactController@update')->name('contacts.update');
-        Route::post('/delete', 'Backend\ContactController@delete')->name('contacts.delete');
-
-        Route::get('/communicate', 'Backend\ContactController@viewCommunicate')->name('contacts.communicate');
-        Route::post('/communicate/delete', 'Backend\ContactController@deleteCommunicate')->name('contacts.communicate.delete');
-        
-    });
-    
+       
     Route::prefix('abouts')->group(function(){
     
         Route::get('/view', 'Backend\AboutController@view')->name('abouts.view');
@@ -153,6 +139,20 @@ Route::group(['middleware'=>['auth', 'admin']], function(){
         Route::get('/edit/{id}', 'Backend\TeamController@edit')->name('teams.edit');
         Route::post('/update/{id}', 'Backend\TeamController@update')->name('teams.update');
         Route::post('/delete', 'Backend\TeamController@delete')->name('teams.delete');
+        
+    });
+     
+    Route::prefix('contacts')->group(function(){
+    
+        Route::get('/view', 'Backend\ContactController@view')->name('contacts.view');
+        Route::get('/add', 'Backend\ContactController@add')->name('contacts.add');
+        Route::post('/store', 'Backend\ContactController@store')->name('contacts.store'); 
+        Route::get('/edit/{id}', 'Backend\ContactController@edit')->name('contacts.edit');
+        Route::post('/update/{id}', 'Backend\ContactController@update')->name('contacts.update');
+        Route::post('/delete', 'Backend\ContactController@delete')->name('contacts.delete');
+
+        Route::get('/communicate', 'Backend\ContactController@viewCommunicate')->name('contacts.communicate');
+        Route::post('/communicate/delete', 'Backend\ContactController@deleteCommunicate')->name('contacts.communicate.delete');
         
     });
     

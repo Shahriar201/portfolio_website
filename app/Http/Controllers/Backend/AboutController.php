@@ -67,6 +67,9 @@ class AboutController extends Controller
 
     public function delete(Request $request){
         $about = About::find($request->id);
+        if(file_exists('public/upload/about_images/' . $about->image) AND ! empty($about->image)){
+            unlink('public/upload/about_images/' . $about->image);
+        }
         $about->delete();
 
         return redirect()->route('abouts.view')->with('success', 'Data deleted successfully');

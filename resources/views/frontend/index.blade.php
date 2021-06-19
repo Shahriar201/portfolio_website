@@ -23,7 +23,7 @@
 <header id="header_wrapper">
   <div class="container">
     <div class="header_box">
-      <div class="logo"><a href=""><img src="{{ asset('public/frontend') }}/img/logo.png" alt="logo"></a></div>
+      <div class="logo"><a href=""><img src="{{ asset('public/upload/logo_images/'.$logo->image) }}" alt="logo"></a></div>
 	  <nav class="navbar navbar-inverse" role="navigation">
       <div class="navbar-header">
         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -53,12 +53,12 @@
         <div class="row">
           <div class="col-lg-5 col-sm-7">
             <div class="top_left_cont zoomIn wow animated"> 
-              <h2>We create <strong>awesome</strong> web templates</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  printer took a galley of type and scrambled it to make a type specimen.</p>
+              <h2><strong>{{ $slider->short_title }}</strong></h2>
+              <p>{{ $slider->long_title }}</p>
               <a href="#service" class="read_more2">Read more</a> </div>
           </div>
           <div class="col-lg-7 col-sm-5">
-			<img src="{{ asset('public/frontend') }}/img/main_device_image.png" class="zoomIn wow animated" alt="" />
+			<img src="{{ asset('public/upload/slider_images/'.$slider->image) }}" class="zoomIn wow animated" alt="" />
 		  </div>
         </div>
       </div>
@@ -73,12 +73,11 @@
     <h2>About</h2>
     <div class="inner_section">
 	<div class="row">
-      <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="{{ asset('public/frontend') }}/img/about-img.jpg" class="img-circle delay-03s animated wow zoomIn" alt=""></div>
+      <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="{{ asset('public/upload/about_images/'.$about->image) }}" class="img-circle delay-03s animated wow zoomIn" alt=""></div>
       	<div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
         	<div class=" delay-01s animated fadeInDown wow animated">
-			<h3>Lorem Ipsum has been the industry's standard dummy text ever..</h3><br/> 
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.PageMaker including versions of Lorem Ipsum.</p> <br/>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			<h3>{{ $about->title }}</h3><br/> 
+            <p>{{ $about->description }}</p>
 </div>
 <div class="work_bottom"> <span>Want to know more..</span> <a href="#contact" class="contact_btn">Contact Us</a> </div>       
 	   </div>
@@ -99,52 +98,17 @@
     <h2>Services</h2>
     <div class="service_wrapper">
       <div class="row">
-        <div class="col-lg-4">
-          <div class="service_block">
-            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-android"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Android</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+
+        @foreach($services as $service)
+          <div class="col-lg-4">
+            <div class="service_block">
+              <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-android"></i></span> </div>
+              <h3 class="animated fadeInUp wow">{{ $service->short_title }}</h3>
+              <p class="animated fadeInDown wow">{{ $service->long_title }}</p>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4 borderLeft">			
-          <div class="service_block">
-            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-apple"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Apple IOS</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 borderLeft">
-          <div class="service_block">
-            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-html5"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Design</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-          </div>
-        </div>
+        @endforeach
       </div>
-	   <div class="row borderTop">
-        <div class="col-lg-4 mrgTop">
-          <div class="service_block">
-            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-dropbox"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Concept</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 borderLeft mrgTop">
-          <div class="service_block">
-            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-slack"></i></span> </div>
-            <h3 class="animated fadeInUp wow">User Research</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 borderLeft mrgTop">
-          <div class="service_block">
-            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-users"></i></span> </div>
-            <h3 class="animated fadeInUp wow">User Experience</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 <!--Service-->

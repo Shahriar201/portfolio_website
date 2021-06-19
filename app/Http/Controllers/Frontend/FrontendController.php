@@ -9,18 +9,22 @@ use App\Model\Slider;
 use App\Model\Contact;
 use App\Model\About;
 use App\Model\Communicate;
-use App\Model\Product;
-use App\Model\ProductColor;
-use App\Model\ProductSize;
-use App\Model\ProductSubImage;
+use App\Model\Client;
+use App\Model\Portfolio;
+use App\Model\Service;
+use App\Model\Team;
+use App\Model\TeamTitle;
 use Mail;
 use DB;
 
 class FrontendController extends Controller
 {
     public function index(){
-        // $data['logo'] = Logo::first();
-        // $data['sliders'] = Slider::all();
+        $data['logo'] = Logo::first();
+        $data['slider'] = Slider::first();
+        $data['about'] = About::first();
+        $data['services'] = Service::all();
+        $data['portfolios'] = Portfolio::all();
         // $data['contact'] = Contact::first();
 
         // $data['categories'] = Product::select('category_id')->groupBy('category_id')->get();
@@ -28,7 +32,7 @@ class FrontendController extends Controller
         // // dd($data['categories']->toArray());
         // $data['products'] = Product::orderBy('id', 'desc')->paginate(8);
 
-        return view('frontend.index');
+        return view('frontend.index', $data);
     }
 
     public function productList(){

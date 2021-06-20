@@ -17,6 +17,59 @@
     <script src="js/html5element.js"></script>
 <![endif]-->
 
+    {{-- Progressbar --}}
+    {{-- <style type="text/css">
+        /* Make sure that padding behaves as expected */
+        * {
+            box-sizing: border-box
+        }
+
+        /* Container for skill bars */
+        .container {
+            width: 100%;
+            /* Full width */
+            background-color: #ddd;
+            /* Grey background */
+        }
+
+        .skills {
+            text-align: right;
+            /* Right-align text */
+            padding-top: 10px;
+            /* Add top padding */
+            padding-bottom: 10px;
+            /* Add bottom padding */
+            color: white;
+            /* White text color */
+        }
+
+        .html {
+            width: 90%;
+            background-color: #04AA6D;
+        }
+
+        /* Green */
+        .css {
+            width: 80%;
+            background-color: #2196F3;
+        }
+
+        /* Blue */
+        .js {
+            width: 65%;
+            background-color: #f44336;
+        }
+
+        /* Red */
+        .php {
+            width: 60%;
+            background-color: #808080;
+        }
+
+        /* Dark Grey */
+
+    </style> --}}
+
 </head>
 
 <body>
@@ -26,7 +79,7 @@
         <div class="container">
             <div class="header_box">
                 {{-- <div class="logo"><a href=""><img src="{{ asset('public/upload/logo_images/' . $logo->image) }}" --}}
-                            {{-- alt="logo"></a></div> --}}
+                {{-- alt="logo"></a></div> --}}
                 <nav class="navbar navbar-inverse" role="navigation">
                     <div class="navbar-header">
                         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse"
@@ -38,9 +91,9 @@
                         <ul class="nav navbar-nav" id="mainNav">
                             <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
                             <li><a href="#aboutUs" class="scroll-link">About Us</a></li>
+                            {{-- <li><a href="#clients" class="scroll-link">Skill</a></li> --}}
                             <li><a href="#service" class="scroll-link">Experience</a></li>
                             <li><a href="#Portfolio" class="scroll-link">Portfolio</a></li>
-                            {{-- <li><a href="#clients" class="scroll-link">Clients</a></li> --}}
                             <li><a href="#team" class="scroll-link">Team</a></li>
                             <li><a href="#contact" class="scroll-link">Contact</a></li>
                         </ul>
@@ -66,7 +119,8 @@
                         </div>
                         <div style="padding:30px 5px 5px 50px" class="col-lg-5 col-sm-8">
                             <img src="{{ asset('public/upload/slider_images/' . $slider->image) }}"
-                                class="zoomIn wow animated" alt="" style="width: 250px; height:280px; border-radius:20px"/>
+                                class="zoomIn wow animated" alt=""
+                                style="width: 250px; height:280px; border-radius:20px" />
                         </div>
                     </div>
                 </div>
@@ -104,27 +158,62 @@
     <!--Aboutus-->
 
 
+    {{-- <section class="page_section" id="clients">
+        <!--page_section-->
+        <h2>My Skills</h2>
+        <!--page_section-->
+        <div class="row" style="margin-left: 10px;">
+            <div class="col-md-6">
+                <div class="progressbar">
+                    <p>HTML</p>
+                    <div class="container">
+                        <div class="skills html">90%</div>
+                    </div>
+    
+                    <p>CSS</p>
+                    <div class="container">
+                        <div class="skills css">80%</div>
+                    </div>
+    
+                    <p>JavaScript</p>
+                    <div class="container">
+                        <div class="skills js">65%</div>
+                    </div>
+    
+                    <p>PHP</p>
+                    <div class="container">
+                        <div class="skills php">60%</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section> --}}
+    <!--client_logos-->
+
     <!--Service-->
+
     <section id="service">
         <div class="container">
             <h2>Experience</h2>
-            <div class="service_wrapper">
-                <div class="row">
-                    
-                    @foreach ($services as $service)
-                        <div class="col-lg-4">
-                            <div class="service_block">
-                                <div class="service_icon delay-03s animated wow  zoomIn"> <span><i
-                                            class="{{ $service->icon }}"></i></span> </div>
-                                <h3 class="animated fadeInUp wow">{{ $service->short_title }}</h3>
-                                <p class="animated fadeInDown wow">{{ $service->long_title }}</p>
-                            </div>
+            {{-- <div class="service_wrapper"> --}}
+            @foreach ($services as $service)
+                <div class="">
+                    <div class="col-sm-3">
+                        <div class="service_block">
+                            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i
+                                        class="{{ $service->icon }}"></i></span> </div>
+                            <h3 class="animated fadeInUp wow">{{ $service->short_title }}</h3>
+                            <p class="animated fadeInDown wow">{{ $service->long_title }}</p>
                         </div>
-                    @endforeach
-                </div>
-            </div>
+                    </div>
+            @endforeach
+            {{-- </div> --}}
+        </div>
+        </div>
     </section>
     <!--Service-->
+
 
     <!-- Portfolio -->
     <section id="Portfolio" class="content">
@@ -146,12 +235,12 @@
         <!-- Portfolio Filters -->
         <div class="portfolio">
 
-     {{-- <div id="filters" class="sixteen columns">
-      <ul class="clearfix">
-        <li><a id="all" href="#" data-filter="*" class="active">
-          <h5>All</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".prototype">
+            <div id="filters" class="sixteen columns">
+                <ul class="clearfix">
+                    <li><a id="all" href="#" data-filter="*" class="active">
+                            <h5>All</h5>
+                        </a></li>
+                    {{-- <li><a class="" href="#" data-filter=".prototype">
           <h5>Prototype</h5>
           </a></li>
         <li><a class="" href="#" data-filter=".design">
@@ -165,10 +254,10 @@
           </a></li>
         <li><a class="" href="#" data-filter=".web">
           <h5>Web App</h5>
-          </a></li>
-      </ul>
-    </div>
-    <!--/Portfolio Filters --> --}}
+          </a></li> --}}
+                </ul>
+            </div>
+            <!--/Portfolio Filters -->
 
             <!-- Portfolio Wrapper -->
             <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;"
@@ -178,10 +267,11 @@
                 @foreach ($portfolios as $portfolio)
                     <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;"
                         class="portfolio-item one-four   appleIOS isotope-item">
-                        <div class="portfolio_img"> 
+                        <div class="portfolio_img">
                             <a href="https://www.qries.com/">
-                                <img src="{{ asset('public/upload/portfolio_images/' . $portfolio->image) }}" alt="Portfolio 1">
-                            </a> 
+                                <img src="{{ asset('public/upload/portfolio_images/' . $portfolio->image) }}"
+                                    alt="Portfolio 1">
+                            </a>
                         </div>
                         <div class="item_overlay">
                             <div class="item_info">
@@ -211,23 +301,6 @@
     </section>
     <!--/Portfolio -->
 
-    {{-- <section class="page_section" id="clients">
-        <!--page_section-->
-        <h2>Clients</h2>
-        <!--page_section-->
-        <div class="client_logos">
-            <!--client_logos-->
-            <div class="container">
-                <ul class="fadeInRight animated wow">
-                    @foreach ($clients as $client)
-                        <li><a href="javascript:void(0)"><img
-                                    src="{{ asset('public/upload/client_images/' . $client->image) }}" alt=""></a></li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </section> --}}
-    <!--client_logos-->
 
     <section class="page_section team" id="team">
         <!--main-section team-start-->
@@ -237,9 +310,9 @@
             <div class="team_section clearfix">
 
                 @foreach ($teams as $team)
-                <div class="team_area col-md-4">
-                    
-                </div>
+                    <div class="team_area col-md-4">
+
+                    </div>
                     <div class="team_area">
                         <div class="team_box wow fadeInDown delay-03s">
                             <div class="team_box_shadow"><a href=""></a></div>
@@ -299,14 +372,14 @@
 
 
                         <ul class="social_links">
-                            <li class="twitter animated bounceIn wow delay-02s"><a href="{{ $contact->twitter }}" target="_blank"><i
-                                        class="fa fa-twitter"></i></a></li>
-                            <li class="facebook animated bounceIn wow delay-03s"><a href="{{ $contact->facebook }}" target="_blank"><i
-                                        class="fa fa-facebook"></i></a></li>
-                            <li class="pinterest animated bounceIn wow delay-04s"><a href="{{ $contact->linkedin }}" target="_blank"><i
-                                        class="fa fa-linkedin"></i></a></li>
-                            <li class="gplus animated bounceIn wow delay-05s"><a href="{{ $contact->instagram }}" target="_blank"><i
-                                        class="fa fa-instagram"></i></a></li>
+                            <li class="twitter animated bounceIn wow delay-02s"><a href="{{ $contact->twitter }}"
+                                    target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="facebook animated bounceIn wow delay-03s"><a href="{{ $contact->facebook }}"
+                                    target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="pinterest animated bounceIn wow delay-04s"><a href="{{ $contact->linkedin }}"
+                                    target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="gplus animated bounceIn wow delay-05s"><a href="{{ $contact->instagram }}"
+                                    target="_blank"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-lg-8 wow fadeInLeft delay-06s">
